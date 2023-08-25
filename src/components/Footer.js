@@ -1,8 +1,40 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BiChevronDown } from 'react-icons/bi'
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../context/authContext'
 
 export const Footer = () => {
+
+  const { id, setId } = useContext(AuthContext)
+
+  const navigate  = useNavigate()
+
+  const handleHome = () => {
+    setId(1)
+    navigate('/');
+  }
+
+  const handleAboutUs = () => {
+    setId(2)
+    navigate('/AboutUs');
+  }
+
+  const handleRecruitment = () => {
+    setId(3)
+    navigate('/Recruitment');
+  }
+
+  const handleContact = () => {
+    setId(4)
+    navigate('/Contact');
+  }
+
+  const handlePosts = () => {
+    setId(5)
+    navigate('/Posts');
+  }
+
   return (
     <div className='w-screen'>
         <div className='bg-[#1b1b1b] py-[100px]'>
@@ -18,12 +50,55 @@ export const Footer = () => {
               <p className='text-center mb-[16px]'>Cơ sở 3: 279 Núi Thành, Hải Châu, Đà Nẵng.</p>
             </div>
             <ul className='flex flex-row flex-wrap items-center justify-center font-semibold text-white mb-[20px]'>
-              <li className='hover:text-[#D60F0F] cursor-pointer px-[20px] py-[13px]'>Trang chủ</li>
-              <li className='hover:text-[#D60F0F] cursor-pointer flex flex-row items-center px-[20px] py-[13px]'>Khóa học <BiChevronDown/></li>
-              <li className='hover:text-[#D60F0F] cursor-pointer px-[20px] py-[13px]'>Về chúng tôi</li>
-              <li className='hover:text-[#D60F0F] cursor-pointer px-[20px] py-[13px]'>Tuyển dụng</li>
-              <li className='hover:text-[#D60F0F] cursor-pointer px-[20px] py-[13px]'>Liên hệ</li>
-              <li className='hover:text-[#D60F0F] cursor-pointer flex flex-row items-center px-[20px] py-[13px]'>Bài viết <BiChevronDown/></li>
+            <li className={id === 1 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleHome}>
+            <a href='#'>
+            Trang chủ
+            </a>
+            </li>
+          <li className='relative group'>
+            <p className='cursor-pointer flex flex-row items-center px-[20px] py-[13px] relative hover:text-[#CF0F0F]'>
+              Khóa học <BiChevronDown/>
+            </p>
+            <ul className='absolute top-[46px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white hidden overflow-y-scroll max-h-[260px] group-hover:flex'>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tiếng Anh mẫu giáo</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tiếng Anh Mầm Non</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tiếng Anh Thiếu Nhi</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tiếng Anh Thiếu Niên</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Nền Tảng IELTS</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Active Learning</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Cambridge English</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Du Học</li>
+            </ul>
+          </li>
+          <li className={id === 2 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleAboutUs}>
+            <a href='#'>
+            Về chúng tôi
+            </a>
+            </li>
+          <li className={id === 3 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleRecruitment}>
+            <a href='#'>
+            Tuyển dụng
+            </a>
+            </li>
+          <li className={id === 4 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleContact}>
+            <a href='#'>
+            Liên hệ
+            </a>
+            </li>
+          <li className='relative group' onClick={handlePosts}>
+            <a href='#'>
+            <p className='hover:text-[#CF0F0F] cursor-pointer flex flex-row items-center px-[20px] py-[13px]'>
+              Bài viết <BiChevronDown/>
+            </p>
+            <ul className='absolute top-[46px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white hidden group-hover:flex'>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Ưu đãi</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Chương trình</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Sự kiện</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Vinh danh học viên</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tin tức</li>
+            </ul> 
+            </a>
+          </li>
             </ul>
             <div className='text-white text-[24px] mb-[20px]'>
               Theo dõi SOPHIA tại các kênh

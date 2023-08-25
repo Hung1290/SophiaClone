@@ -4,6 +4,10 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+*{
+  font-family: 'Nunito', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,4 +20,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.shadow-home2 {
+  box-shadow: 14px 14px 56px 0px rgba(33,37.99999999999999,106,.1)
+}
+
+.shadow-home6 {
+  box-shadow: 0 0 22px 0 rgba(0,0,0,.06);
+}
+
+.shadow-home7 {
+  box-shadow: 0px 30px 70px 0px rgba(0,15.000000000000071,56,.1);
+}
+
+.shadow-home9 {
+  box-shadow: 0px 10px 65px 0px rgba(10.999999999999998,9.000000000000004,27,.04);
 }

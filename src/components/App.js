@@ -1,7 +1,9 @@
 import React from "react";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
 import { Home } from "./HomePage/Home";
+import { AboutUs } from "./AboutUs/AboutUs";
+import { Recruitment } from "./Recruitment/Recruitment";
+import { Contact } from "./Contact/Contact";
+import { Posts } from "./Posts/Posts";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -9,17 +11,26 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home/>,
   },
-
+  {
+    path: "/AboutUs",
+    element: <AboutUs/>,
+  },
+  {
+    path: "/Recruitment",
+    element: <Recruitment/>,
+  },
+  {
+    path: "/Contact",
+    element: <Contact/>,
+  },
+  {
+    path: "/Posts",
+    element: <Posts/>,
+  },
 ])
 
 function App() {
-  return (
-  <div>
-    <Header/>
-    <RouterProvider router={router}/>
-    <Footer/>
-  </div>
-  )
+  return <RouterProvider router={router}/>
 }
 
 export default App;

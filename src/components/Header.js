@@ -1,35 +1,57 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BiChevronDown } from 'react-icons/bi'
-import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../context/authContext'
 
 export const Header = () => {
 
-  const [isCourseList, setIsCourseList] = useState(false)
-  const [isPostsList, setIsPostsList] = useState(false)
+  const { id, setId } = useContext(AuthContext)
 
-  const handleShowCourseList = () => {
-    setIsCourseList(!isCourseList)
+  const navigate  = useNavigate()
+
+  const handleHome = () => {
+    setId(1)
+    navigate('/');
   }
 
-  const handleShowPostsList = () => {
-    setIsPostsList(!isPostsList)
+  const handleAboutUs = () => {
+    setId(2)
+    navigate('/AboutUs');
+  }
+
+  const handleRecruitment = () => {
+    setId(3)
+    navigate('/Recruitment');
+  }
+
+  const handleContact = () => {
+    setId(4)
+    navigate('/Contact');
+  }
+
+  const handlePosts = () => {
+    setId(5)
+    navigate('/Posts');
   }
 
   return (
     <div className='w-screen bg-white flex justify-center mb-[110px]'>
       <div className='fixed w-screen bg-white flex flex-row justify-around items-center py-[10px] z-10'>
         <div className='p-[10px]'>
-          <img className='w-[70px] h-[70px] cursor-pointer' src='/images/logo-SOPHIA.png'/>
+          <img alt='' className='w-[70px] h-[70px] cursor-pointer' src='/images/logo-SOPHIA.png' onClick={handleHome}/>
         </div>
         <ul className='p-[10px] flex flex-row items-center font-semibold'>
-          <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]'>Trang chủ</li>
-          <li className='relative' onClick={handleShowCourseList}>
-            <p className='cursor-pointer flex flex-row items-center px-[20px] py-[13px] relative hover:text-[#CF0F0F]'>
+          <li className={id === 1 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleHome}>
+            <a href='#'>
+            Trang chủ
+            </a>
+            </li>
+          <li className='relative group'>
+            <p className='cursor-pointer flex flex-row items-center px-[20px] py-[13px] relative hover:text-[#CF0F0F]'
+            >
               Khóa học <BiChevronDown/>
             </p>
-            {
-            isCourseList &&
-            <ul className='absolute top-[82px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white rounded-lg'>
+             <ul className='absolute hidden group-hover:flex top-[46px] left-[10px]  flex-col justify-center items-center w-[250px] bg-white rounded-lg '>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh mẫu giáo</li>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh Mầm Non</li>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh Thiếu Nhi</li>
@@ -39,25 +61,35 @@ export const Header = () => {
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Cambridge English</li>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Du Học</li>
             </ul>
-            }
           </li>
-          <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]'>Về chúng tôi</li>
-          <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]'>Tuyển dụng</li>
-          <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]'>Liên hệ</li>
-          <li className='relative' onClick={handleShowPostsList}>
+          <li className={id === 2 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleAboutUs}>
+            <a href='#'>
+            Về chúng tôi
+            </a>
+            </li>
+          <li className={id === 3 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleRecruitment}>
+            <a href='#'>
+            Tuyển dụng
+            </a>
+            </li>
+          <li className={id === 4 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleContact}>
+            <a href='#'>
+            Liên hệ
+            </a>
+            </li>
+          <li className='relative group' onClick={handlePosts}>
+            <a href='#'>
             <p className='hover:text-[#CF0F0F] cursor-pointer flex flex-row items-center px-[20px] py-[13px]'>
               Bài viết <BiChevronDown/>
             </p>
-            {
-            isPostsList && 
-            <ul className='absolute top-[82px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white rounded-lg'>
+            <ul className='absolute hidden group-hover:flex top-[46px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white rounded-lg'>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Ưu đãi</li>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Chương trình</li>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Sự kiện</li>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Vinh danh học viên</li>
               <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tin tức</li>
             </ul> 
-            }
+            </a>
           </li>
         </ul>
       </div>
