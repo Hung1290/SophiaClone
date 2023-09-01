@@ -1,0 +1,240 @@
+{
+  "Home1": [
+    {
+      "id": "1",
+      "img": "/images/cover1.webp"
+    },
+    {
+      "id": "2",
+      "img": "/images/cover2.jpg"
+    }
+  ],
+  "home3": [
+    {
+      "id": "1",
+      "img": "/images/coursecard1.webp",
+      "heading": "tiếng anh mẫu giáo",
+      "content": "Dành cho bé từ 2.5 - 4 tuổi. Tạo môi trường học tập cho các con."
+    },
+    {
+      "id": "2",
+      "img": "/images/coursecard2.webp",
+      "heading": "tiếng anh mầm non",
+      "content": "Dành cho bé từ 3 - 6 tuổi. Khơi mở niềm đam mê học tập"
+    },
+    {
+      "id": "3",
+      "img": "/images/coursecard3.jpg",
+      "heading": "tiếng anh thiếu nhi",
+      "content": "Dành cho bé từ 6 - 11 tuổi. Giải pháp toàn diện 4 kĩ năng."
+    },
+    {
+      "id": "4",
+      "img": "/images/coursecard4.webp",
+      "heading": "tiếng anh thiếu niên",
+      "content": "Dành cho bé từ 11 - 15 tuổi. Tạo lập nền tảng phát triễn kĩ năng IELTS."
+    },
+    {
+      "id": "5",
+      "img": "/images/coursecard5.jpg",
+      "heading": "nền tảng ielts",
+      "content": "Chương trình nền tảng vững chắc, giúp bé đạt được mục tiêu đề ra."
+    },
+    {
+      "id": "6",
+      "img": "/images/coursecard6.jpg",
+      "heading": "hỗ trợ du học",
+      "content": "Hỗ trợ, đào tạo các bạn để đạt được mục tiêu đi du học của các bạn."
+    }
+  ],
+  "home6": [
+    {
+      "id": "1",
+      "img": "/images/ngovanchien.webp",
+      "name": "Ngô Văn Chiến",
+      "position": "Phụ huynh bé Ken",
+      "content": "Tôi rất thích môi trường ở SOPHIA, đội ngũ giáo viên hoàn toàn là người nước ngoài, rất tận tình quan tâm chăm sóc bé Ken sữa lỗi phát âm từng chút một. Thật sự rất có tâm"
+    },
+    {
+      "id": "2",
+      "img": "/images/ngoquyetchien.webp",
+      "name": "Nguyễn Hữu Tú",
+      "position": "Phụ huynh bé Henry",
+      "content": "Cảm ơn các thầy cô ở SOPHIA đặc biệt là thầy David đã giúp bé PHOENIX đạt được điểm số 8.5 IELTS vượt qua cả kì vọng của bố mẹ."
+    },
+    {
+      "id": "3",
+      "img": "/images/Queen_compress.webp",
+      "name": "Queen",
+      "position": "Học viên",
+      "content": "Sau khi học IELTS ở trung tâm tiếng Anh Sophia cả 4 kỹ năng của em đều được cải thiện đáng kể, ở đây cũng thường xuyên tổ chức thi thử để tụi em kiểm tra khả năng của mình."
+    }
+  ],
+  "home8": [
+    {
+      "id": "1",
+      "img": "/images/nus_sin-min.webp"
+    },
+    {
+      "id": "2",
+      "img": "/images/logo_persion_sec_min.webp"
+    },
+    {
+      "id": "3",
+      "img": "/images/idp_doitac-min.webp"
+    },
+    {
+      "id": "4",
+      "img": "/images/dropshadow1-min.webp"
+    },
+    {
+      "id": "5",
+      "img": "/images/1280px-Cambridge_University_Pres-min.webp"
+    },
+    {
+      "id": "6",
+      "img": "/images/blue_logo-min.webp"
+    }
+  ],
+  "aboutus5": [
+    {
+      "id": "1",
+      "img": "/images/SOPHIA-ENGLISH-CENTER-4-min.png",
+      "name": "David James",
+      "job": "CEO, Founder & Trainee"
+    },
+    {
+      "id": "2",
+      "img": "/images/SOPHIA-ENGLISH-CENTER-3-min.png",
+      "name": "Jamie Bates",
+      "job": "Manager & Teacher"
+    },
+    {
+      "id": "3",
+      "img": "/images/alan-min.png",
+      "name": "Alan Brownbridge",
+      "job": "Teacher"
+    },
+    {
+      "id": "4",
+      "img": "/images/teacher.webp",
+      "name": "Scott Harmon",
+      "job": "Teacher"
+    },
+    {
+      "id": "5",
+      "img": "/images/SOPHIA-ENGLISH-CENTER-21-min.png",
+      "name": "Philip",
+      "job": "Teacher"
+    },
+    {
+      "id": "6",
+      "img": "/images/chrissss-min.png",
+      "name": "Chris",
+      "job": "Teacher"
+    },
+    {
+      "id": "7",
+      "img": "/images/teacher1-min.png",
+      "name": "Tony",
+      "job": "Teacher"
+    },
+    {
+      "id": "8",
+      "img": "/images/teacher2-min.png",
+      "name": "Justin",
+      "job": "Teacher"
+    }
+  ],
+  "aboutus6": [
+    {
+      "id": "1",
+      "img": "images/lawrancecec-min.jpg",
+      "name": "Lawrance",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "2",
+      "img": "images/beetricss-min.jpg",
+      "name": "Beatrice",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "3",
+      "img": "images/bellaaana-min.jpg",
+      "name": "Bella",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "4",
+      "img": "images/jolibeeeeee-min.jpg",
+      "name": "Jolie",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "5",
+      "img": "images/nicckyy-min.jpg",
+      "name": "Nicky",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "6",
+      "img": "images/vivietnam-min.jpg",
+      "name": "Vivian",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "7",
+      "img": "images/tinanasdf-min.jpg",
+      "name": "Tina",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "8",
+      "img": "images/armyyy-min.jpg",
+      "name": "Amy",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "9",
+      "img": "images/caraaaaaas-min.jpg",
+      "name": "Cara",
+      "job": "Teaching Assistant"
+    },
+    {
+      "id": "10",
+      "img": "images/sarahaha-min.jpg",
+      "name": "Garnet",
+      "job": "Teaching Assistant"
+    }
+  ],
+  "home9": [
+    {
+      "fullname": "1",
+      "phonenumber": "1",
+      "course": "Tiếng Anh mầm non",
+      "local": "100 Nguyễn Thị Minh Khai, Đà Nẵng",
+      "note": "1",
+      "contactstatus": "0",
+      "id": 1
+    },
+    {
+      "fullname": "2",
+      "phonenumber": "2",
+      "course": "Tiếng Anh thiếu nhi",
+      "local": "799 Ngô Quyền, Đà Nẵng",
+      "note": "2",
+      "contactstatus": "0",
+      "id": 2
+    },
+    {
+      "fullname": "3",
+      "phonenumber": "3",
+      "course": "Tiếng Anh thiếu niên",
+      "local": "279 Núi Thành, Đà Nẵng",
+      "note": "3",
+      "contactstatus": "0",
+      "id": 3
+    }
+  ]
+}
