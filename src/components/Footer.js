@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import { BiChevronDown } from 'react-icons/bi'
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../context/authContext'
 
 export const Footer = () => {
 
-  const { id, setId } = useContext(AuthContext)
+  const [ id, setId ] = useState(1)
 
   const navigate  = useNavigate()
 

@@ -1,6 +1,50 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../../context/authContext'
+import axios from 'axios'
+import { message } from 'antd';
+
 
 export const Home9 = () => {
+
+  const [messageApi, contextHolder] = message.useMessage()
+
+  const { state, setState } = useContext(AuthContext)
+
+  const handleOnChangeInput = (event, id) => {
+    let valueInput = event.target.value;
+    let stateCopy = {...state};
+    stateCopy[id] = valueInput;
+    setState ({
+      ...stateCopy
+    })
+  }
+
+  const postData = async () => {
+		const response = await axios.post(
+			'http://localhost:3000/home9',
+			{
+        fullname: state.fullname,
+				phonenumber: state.phonenumber,
+				course: state.course,
+				local: state.local,
+				note: state.note,
+        contactstatus: "0",
+			}
+		);
+	};
+
+  const handleSubmit = (event) => {
+		event.preventDefault();
+		postData();
+	};
+
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'Bạn đã gửi thành công',
+    });
+  };
+
   return (
     <div className='bg-[#fafafa] pt-[65px] pb-[75px] mb-[10px]'>
       <div className='w-[90%] mx-auto grid grid-cols-2'>
@@ -27,16 +71,16 @@ export const Home9 = () => {
           </div>
         </div>
         <div className='relative z-[2]'>
-          <form className='w-[85%] px-[40px] py-[48px] bg-white shadow-home2 rounded-[10px] m-[50px]'>
+          <form className='w-[85%] px-[40px] py-[48px] bg-white shadow-home2 rounded-[10px] m-[50px]' onSubmit={handleSubmit}>
             <div className='rounded-[100%] w-[180px] h-[180px] bg-yellow-500 absolute bottom-0 right-0 z-[-1]'></div>
             <div className='border-[20px] rounded-[100%] border-solid border-red-500 w-[100px] h-[100px] absolute top-0 left-0 z-[-1]'></div>
             <div className='flex flex-col px-[12px]'>
               <div className='flex'>
-                <input required placeholder="Họ tên học viên" type="text" className='w-full p-[16px] mx-[12px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F]'/>
-                <input required placeholder="Số điện thoại" type="text" className='w-full p-[16px] mx-[12px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F]'/>
+                <input required placeholder="Họ tên học viên" type="text" className='w-full p-[16px] mx-[12px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F]' name="fullname" value={state.fullname} onChange={(event) => handleOnChangeInput(event, 'fullname')}/>
+                <input required placeholder="Số điện thoại" type="text" className='w-full p-[16px] mx-[12px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F]' name="phonenumber" value={state.phonenumber} onChange={(event) => handleOnChangeInput(event, 'phonenumber')}/>
               </div>
               <div className='flex'>
-                <select required className='w-full p-[16px] mx-[12px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F] text-[#52525C]'>
+                <select required className='w-full p-[16px] mx-[12px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F] text-[#52525C]' name="course" value={state.course} onChange={(event) => handleOnChangeInput(event, 'course')}>
                   <option value='Chọn khóa học'>Chọn khóa học</option>
                   <option value='Tiếng Anh mầm non'>Tiếng Anh mầm non</option>
                   <option value='Tiếng Anh thiếu nhi'>Tiếng Anh thiếu nhi</option>
@@ -46,7 +90,7 @@ export const Home9 = () => {
                   <option value='Cambridge English'>Cambridge English</option>
                   <option value='Active Learning'>Active Learning</option>
                 </select>
-                <select required className='w-full p-[16px] mx-[12px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F] text-[#52525C]'>
+                <select required className='w-full p-[16px] mx-[12px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F] text-[#52525C]' name="local" value={state.local} onChange={(event) => handleOnChangeInput(event, 'local')}>
                   <option value='Chọn địa chỉ trung tâm'>Chọn địa chỉ trung tâm</option>
                   <option value='100 Nguyễn Thị Minh Khai, Đà Nẵng'>100 Nguyễn Thị Minh Khai, Đà Nẵng</option>
                   <option value='799 Ngô Quyền, Đà Nẵng'>799 Ngô Quyền, Đà Nẵng</option>
@@ -54,15 +98,16 @@ export const Home9 = () => {
                 </select>
               </div>
               <div className='flex'>
-                <textarea cols="40" rows="10" placeholder='Lời nhắn gửi' className='w-full h-[131px] mx-[12px] px-[20px] py-[10px] mb-[20px] rounded-[10px] border-2 border-solid border-[#0B163F1F]'></textarea>
+                <textarea cols="40" rows="10" placeholder='Lời nhắn gửi' className='w-full h-[131px] mx-[12px] px-[20px] py-[10px] mb-[20px] rounded-[10px] border-2 border-solid border-[#0B163F1F]' name="note" value={state.note} onChange={(event) => handleOnChangeInput(event, 'note')}></textarea>
               </div>
-              <div className='flex mx-[12px] mb-[15px] items-start'>
+              {/* <div className='flex mx-[12px] mb-[15px] items-start'>
                 <input type='checkbox' id='checkbox' className='mx-[10px] mt-[6px]'/>
                 <label for='checkbox' className='text-[#52525C]'>Tôi muốn thỉnh thoảng nhận được email tiếp thị từ SOPHIA. Xem chính sách bảo mật
                 </label>
-              </div>
+              </div> */}
               <div className='flex mx-[12px]'>
-                <input className='px-[30px] py-[12px] bg-[#ff3951] text-white rounded-full cursor-pointer border border-solid border-[#ff3951] hover:bg-white hover:text-[#ff3951]' type="submit" value="Gửi ngay"/>
+                {contextHolder}
+                <input className='px-[30px] py-[12px] bg-[#ff3951] text-white rounded-full cursor-pointer border border-solid border-[#ff3951] hover:bg-white hover:text-[#ff3951]' type="submit" value="Gửi ngay" onClick={success}/>
               </div>
             </div>
           </form>

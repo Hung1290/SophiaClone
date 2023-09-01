@@ -1,14 +1,6 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Slider from 'react-slick'
-
-const slider = [
-  {
-    img: '/images/cover1.webp'
-  },
-  {
-    img: '/images/cover2.jpg'
-  }
-]
+import axios from 'axios'
 
 const settings = {
   dots: true,
@@ -21,11 +13,34 @@ const settings = {
 };
 
 export const Home1 = () => {
+  
+  const [items, setItems] = useState([]);
+  
+  const getData = async () => {
+    const response = await axios.get(
+      'http://localhost:3000/home1',
+      {
+        params: {
+          filter: {
+            order: ['id DESC'],
+          },
+        },
+      }
+    );
+  
+    if (response.status === 200) {
+      setItems(response.data);
+    }
+  };
+  useEffect(() => {
+		getData();
+	}, []);
+
   return (
     <div className='w-screen h-[720px] overflow-hidden'>
       {
         <Slider {...settings}>
-          {slider.map((item) => (
+          {items.map((item) => (
             <img src={item.img} className='w-screen h-[720px]'/>
           ))}
         </Slider>

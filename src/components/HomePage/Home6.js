@@ -1,29 +1,9 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import { AiFillStar } from 'react-icons/ai'
 import Slider from 'react-slick'
 import quotesdot from '../../assets/svg/quotesdot.svg'
 import quotes from '../../assets/svg/quotes.svg'
-
-const socialCard = [
-  {
-    img: '/images/ngovanchien.webp',
-    name: 'Ngô Văn Chiến',
-    position: 'Phụ huynh bé Ken',
-    content: 'Tôi rất thích môi trường ở SOPHIA, đội ngũ giáo viên hoàn toàn là người nước ngoài, rất tận tình quan tâm chăm sóc bé Ken sữa lỗi phát âm từng chút một. Thật sự rất có tâm',
-  },
-  {
-    img: '/images/ngoquyetchien.webp',
-    name: 'Nguyễn Hữu Tú',
-    position: 'Phụ huynh bé Henry',
-    content: 'Cảm ơn các thầy cô ở SOPHIA đặc biệt là thầy David đã giúp bé PHOENIX đạt được điểm số 8.5 IELTS vượt qua cả kì vọng của bố mẹ.',
-  },
-  {
-    img: '/images/Queen_compress.webp',
-    name: 'Queen',
-    position: 'Học viên',
-    content: 'Sau khi học IELTS ở trung tâm tiếng Anh Sophia cả 4 kỹ năng của em đều được cải thiện đáng kể, ở đây cũng thường xuyên tổ chức thi thử để tụi em kiểm tra khả năng của mình.',
-  }
-]
 
 const settings = {
   dots: false,
@@ -36,17 +16,40 @@ const settings = {
 };
 
 export const Home6 = () => {
+
+  const [items, setItems] = useState([]);
+
+	const getData = async() => {
+		const response = await axios.get(
+			'http://localhost:3000/home6',
+			{
+			  params: {
+				filter: {
+				  order: ['id DESC'],
+				},
+			  },
+			}
+		  );
+		
+		if (response.status === 200) {
+		setItems(response.data);
+		}
+	}
+	useEffect(() => {
+		getData();
+	}, []);
+
   return (
     <div className='pt-[115px] pb-[100px]'>
       <div className='w-4/5 mx-auto'>
         <div className='mb-[20px]'>
-          <h2 className='flex justify-center text-[40px] text-[#cf0f0f] mb-[17px] text-center'>Phụ huynh và học sinh nói gì về SOPHIA
+          <h2 className='flex justify-center text-[40px] text-[#cf0f0f] mb-[17px] text-center font-bold'>Phụ huynh và học sinh nói gì về SOPHIA
           </h2>
           <p className='text-center mb-[16px]'>SOPHIA xin chân thành cảm ơn tất cả các bậc phụ huỳnh và các em học sinh đã tin tưởng và đồng hành cùng SOPHIA trong hơn 10 năm qua. Dưới đây là một số nhận xét của các phụ huynh và học sinh về SOPHIA.</p>
         </div>
         <div className='p-[15px]'>
           <Slider {...settings}>
-            {socialCard.map((item, index) => (
+            {items.map((item, index) => (
               <div key={index} className='w-[470px]'>
                 <div className='pt-[50px] pb-[43px] px-[50px] my-[25px] mx-[15px] rounded-[15px] bg-white shadow-home6 relative z-[2]'>
                   <img src={quotesdot} className='w-[60px] absolute left-[25px] top-[25px] z-[-1]'/>

@@ -1,14 +1,22 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 
 const AuthContext = createContext();
 
 const Provider = AuthContext.Provider;
 
+const initialState = {
+	fullname: '',
+	phonenumber: '',
+	course: '',
+	local: '',
+	note: '',
+};
+
 const AuthProvider = ({ children }) => {
-	const [id, setId] = useState(1);
+	const [state, setState] = useState(initialState);
 
 	return (
-	<Provider value={{ id, setId }}>
+	<Provider value={{ state, setState }}>
 		{children}
 	</Provider>
 	)

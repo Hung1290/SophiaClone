@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import { BiChevronDown } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../context/authContext'
 
 export const Header = () => {
 
-  const { id, setId } = useContext(AuthContext)
+  const [ id, setId ] = useState(1)
 
   const navigate  = useNavigate()
 
@@ -77,18 +76,9 @@ export const Header = () => {
             Liên hệ
             </a>
             </li>
-          <li className='relative group' onClick={handlePosts}>
+          <li className={id === 5 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handlePosts}>
             <a href='#'>
-            <p className='hover:text-[#CF0F0F] cursor-pointer flex flex-row items-center px-[20px] py-[13px]'>
-              Bài viết <BiChevronDown/>
-            </p>
-            <ul className='absolute hidden group-hover:flex top-[46px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white rounded-lg'>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Ưu đãi</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Chương trình</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Sự kiện</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Vinh danh học viên</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tin tức</li>
-            </ul> 
+            Bài viết
             </a>
           </li>
         </ul>
