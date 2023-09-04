@@ -1,31 +1,87 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { message } from 'antd';
 
 export const Post1 = () => {
-    const [file, setFile] = useState(null);
+
+	const [messageApi, contextHolder] = message.useMessage()
+
+	const [title, setTitle] = useState('');
+
+	const [content, setContent] = useState('');
+
+	const [file, setFile] = useState(null);
+
+	const [items, setItems] = useState([]);
+
+	const getData = async () => {
+		const response = await axios.get(
+		  'http://localhost:3000/post1',
+		  {
+			params: {
+			  filter: {
+				order: ['id DESC'],
+			  },
+			},
+		  }
+		);
+	  
+		if (response.status === 200) {
+		  setItems(response.data);
+		}
+	};
+	useEffect(() => {
+		getData();
+	}, []);
+
 	const onChangeFile = (event) => {
 		const files = event.target.files;
 		setFile(files[0]);
 	};
+
 	const onUpload = async () => {
-		const form = new FormData();
-		form.append('file', file);
-		await axios.post('http://localhost:3000/post1', file, {
-			headers: {
-				'Content-Type': 'multipart/form-data',
-                Authorization: 'Bearer token',
-			},
-		});
+		// const form = new FormData();
+		// form.append('file', file);
+		const response = await axios.post('http://localhost:3000/post1', 
+		{
+			title: title,
+			content: content,
+		}
+		// file, {
+		// 	headers: {
+		// 		'Content-Type': 'multipart/form-data',
+		// 	},
+		// }
+		);
+		if (response.status === 201) {
+			messageApi.open({
+				type: 'success',
+				content: 'Đăng thành công',
+			});
+			getData();
+		}
 	};
+
 	const onRemoveFile = () => {
 		setFile(null);
 	};
+
+	const onSubmit = (event) => {
+		event.preventDefault();
+		onUpload();
+	};
+
 	return (
-		<div className="flex items-center justify-center w-screen h-screen">
-			<div>
-				<div className="flex flex-col gap-4">
-					<label>Hình ảnh sản phẩm ( Chọn 1 )</label>
-					<input type="file" className="file" onChange={onChangeFile} />
+		<div className="w-screen bg-cyan-100">
+			<div className='w-4/5 mx-auto bg-slate-300 rounded-lg mb-[16px]'>
+				<form className="flex flex-col gap-4 py-[16px] px-[20px]" onSubmit={onSubmit}>
+					<label className='text-center text-[20px] font-bold'>Tiêu đề</label>
+					<input required type='text' className='border border-[#ccc] rounded-lg p-[10px]' value={title} onChange={(event) => setTitle(event.target.value)}/>
+					<label className='text-center text-[20px] font-bold'>Nội dung</label>
+					<textarea required cols="40" rows="6" className='border border-[#ccc] rounded-lg p-[10px]' value={content} onChange={(event) => setContent(event.target.value)}/>
+
+					<label>Chọn 1 ảnh</label>
+					<input type="file" className="" onChange={onChangeFile} />
 
 					<p>Xem ảnh đã chọn</p>
 					{file && (
@@ -35,19 +91,34 @@ export const Post1 = () => {
 								alt=""
 								className="w-40 "
 							/>
+						<button type="button" className='mt-[16px] px-[30px] py-[12px] bg-[#ff3951] text-white rounded-full cursor-pointer border border-solid border-[#ff3951] hover:bg-white hover:text-[#ff3951]' onClick={onRemoveFile}>
+							Xóa ảnh
+						</button>
 						</div>
 					)}
 
-					<div className="flex flex-row gap-4">
-						<button type="button" onClick={onRemoveFile}>
-							Xóa ảnh
-						</button>
-						<button type="button" onClick={onUpload}>
-							Tải ảnh lên
-						</button>
+					<div className='text-right'>
+						{contextHolder}
+						<input type='submit' value='Đăng' className='px-[30px] py-[12px] bg-[#ff3951] text-white rounded-full cursor-pointer border border-solid border-[#ff3951] hover:bg-white hover:text-[#ff3951]'/>
 					</div>
-				</div>
+				</form>
 			</div>
+			<div className='w-4/5 mx-auto rounded-lg bg-slate-300'>
+				<div className='text-center text-[30px] font-bold border-b-2 border-[#000] py-[10px]'>Bài viết</div>
+			{
+				items.map((item, index) => (
+					<div key={index} className='mx-auto h-full p-[20px]'>
+						<div className='mb-[20px]'>
+							<p className='text-center text-[20px] font-bold'>{item.title}</p>
+						</div>
+						<div className='mb-[30px]'>
+							<p className='text-center'>{item.content}</p>
+						</div>
+						<div className='border-2 border-dashed border-[#000]'></div>
+					</div>
+				))
+			}
+        	</div>
 		</div>
 	);
 }

@@ -25,10 +25,10 @@ const list = [
 export const Contact2 = () => {
   return (
     <div className='w-4/5 mx-auto pt-[120px] pb-[90px]'>
-      <div className='grid grid-cols-3'>
+      <div className='md:grid md:grid-cols-3'>
         {
           list.map((item, index) => (
-            <div key={index} className='bg-[#f5f5f5] rounded-[15px] p-[40px] mx-[15px] text-center'>
+            <div key={index} className='bg-[#f5f5f5] rounded-[15px] p-[40px] mx-[15px] text-center mb-[20px] md:mb-0'>
               <div className='flex justify-center'>
                 <div className='bg-[#cf0f0f] rounded-full p-[22px] text-[30px] text-white mb-[30px]'>{item.icon}</div>
               </div>

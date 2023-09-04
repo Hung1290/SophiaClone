@@ -37,11 +37,11 @@ export const Home1 = () => {
 	}, []);
 
   return (
-    <div className='w-screen h-[720px] overflow-hidden'>
+    <div className='w-screen h-[180px] md:h-[420px] lg:h-[620px] overflow-hidden'>
       {
         <Slider {...settings}>
           {items.map((item) => (
-            <img src={item.img} className='w-screen h-[720px]'/>
+            <img src={item.img} className='w-screen h-[180px] md:h-[420px] lg:h-[620px]'/>
           ))}
         </Slider>
       }

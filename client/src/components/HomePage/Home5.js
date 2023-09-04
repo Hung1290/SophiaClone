@@ -60,16 +60,19 @@ export const Home5 = () => {
         <p className='text-center mb-[16px]'>Với nhiều năm kinh nghiệm giảng dạy và tinh thần luôn đổi mới, sáng tạo. SOPHIA luôn là sự lựa chọn tốt nhất cho các bé tham gia học tập ngoại ngữ.</p>
       </div>
       <div className='py-[30px]'>
-        <div className='flex w-full h-full'>
-          <div className='w-[40%] p-[10px]'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 w-full'>
+          <div className='p-[10px]'>
             <img src='/images/Giao_vien_sophia.webp' className='rounded-[20px]'/>
           </div>
-          <div className='w-[60%] p-[10px] flex items-center'>
+          <div className='p-[10px] flex items-center'>
             <ul className='w-full'>
               {list.map((item, index) => (
                 <li key={index} className={item.id !== showId ? 'font-semibold text-[18px] uppercase px-[30px] py-[20px] cursor-pointer border-2 border-solid border-[#dee2e6] rounded-[15px] mb-[16px] text-right relative hover:text-[#cf0f0f]' : 'font-semibold text-[18px] uppercase px-[30px] py-[20px] cursor-pointer border-2 border-solid border-[#dee2e6] rounded-[15px] mb-[16px] text-right relative text-[#cf0f0f]'} onClick={() => setShowId(item.id)}>
-                  <div className='flex items-center gap-3'>
-                    {item.icon}{item.heading}
+                  <div className='flex items-center gap-3 text-left'>
+                    <p className='w-[18px]'>
+                      {item.icon}
+                    </p>
+                    {item.heading}
                   </div>
                   <span className='absolute top-[16px]'>
                   {

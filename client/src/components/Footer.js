@@ -111,7 +111,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className='w-screen bg-[#000]'>
-          <div className='p-[10px] flex flex-row justify-around items-center'>
+          <div className='p-[10px] flex flex-col md:flex-row justify-around items-center'>
             <div className='text-white mb-[16px] p-[10px] hover:cursor-pointer'>
               <p>Copyright @SOPHIA 2022. All rights reserved.</p>
             </div>

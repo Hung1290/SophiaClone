@@ -4,7 +4,7 @@ import { AboutUs } from "./AboutUs/AboutUs";
 import { Recruitment } from "./Recruitment/Recruitment";
 import { Contact } from "./Contact/Contact";
 import { Posts } from "./Posts/Posts";
-import { Login } from "./Login/Login"
+import { ContactList } from "./ContactList/ContactList"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -29,8 +29,8 @@ const router = createBrowserRouter([
     element: <Posts/>,
   },
   {
-    path: "/Login",
-    element: <Login/>,
+    path: "/ContactList",
+    element: <ContactList/>,
   },
 ])
 

@@ -12,10 +12,6 @@ const list = [
         heading: 'CHĂM SÓC KHÁCH HÀNG',
     },
     {
-        job: 'Teaching Assistant',
-        heading: 'NHÂN VIÊN TRỢ GIẢNG (Teaching Assistant)',
-    },
-    {
         job: 'Sale',
         heading: 'NHÂN VIÊN TƯ VẤN TUYỂN SINH',
     },
@@ -28,12 +24,12 @@ const list = [
 export const Recruitment2 = () => {
   return (
     <div className='w-4/5 mx-auto pt-[115px] pb-[90px]'>
-        <div className='flex mb-[30px] mx-[12px]'>
+        <div className='md:flex mb-[30px] mx-[12px]'>
             <h2 className='uppercase text-[40px] font-bold text-[#cf0f0f]'>CHÀO MỪNG BẠN ĐẾN VỚI TRUNG TÂM ANH NGỮ SOPHIA</h2>
             <p className='text-[#52525c]'>SOPHIA là hệ thống ngoại ngữ và ngoại khóa uy tín hàng đầu tại Việt Nam với hơi 10 ngàn học viên theo học . <br/>
             Với chất lượng giảng dạy đạt chuẩn quốc tế, SOPHIA rộng cửa đón chào những thành viên muốn gia nhập tổ chức bằng tài năng, trí tuệ, phẩm chất đạo đức và lòng say mê công việc.</p>
         </div>
-        <div className='grid grid-cols-2'>
+        <div className='md:grid md:grid-cols-2'>
             {
                 list.map((item, index) => (
                     <div key={index} className='bg-[#0b163f] rounded-[15px] mb-[30px] text-white mx-[12px] px-[40px] pt-[33px] pb-[45px] flex flex-col gap-2'>
@@ -43,7 +39,7 @@ export const Recruitment2 = () => {
                                 Full time
                             </span>
                             <div className='w-full text-right'>
-                                <span className='bg-[rgba(255,255,255,.1)] rounded-[30px] px-[25px] py-[6px] text-right'>{item.job}</span>
+                                <span className='bg-[rgba(255,255,255,.1)] rounded-[30px] px-[25px] py-[6px]'>{item.job}</span>
                             </div>
                         </div>
                         <div className='text-[20px] hover:text-sky-600'>{item.heading}</div>

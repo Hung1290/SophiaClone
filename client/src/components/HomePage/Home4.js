@@ -29,7 +29,7 @@ export const Home4 = () => {
           <p className='text-center mb-[16px]'>Với việc ứng dụng công nghệ vào giảng dạy kết hợp với các phương pháp học mới, được thiết kế để phù hợp với từng năng lực của các bạn học sinh.</p>
         </div>
         <div className='mt-[60px]'>
-          <ul className='flex flex-row justify-center gap-4'>
+          <ul className='flex flex-row flex-wrap justify-center gap-4'>
             <li className={id === 1 ? 'flex flex-row items-center py-[8px] px-[24px] bg-[#175cff] border-2 border-solid border-[rgba(216,216,216,.2)] rounded-lg text-white cursor-pointer' : 'flex flex-row items-center py-[8px] px-[24px] border-2 border-solid border-[rgba(216,216,216,.2)] rounded-lg hover:text-[#175cff] cursor-pointer'} onClick={handleShowMethod}>
               <AiFillStar/> <span className='ml-[8px]'>Phương pháp</span>
             </li>
@@ -42,7 +42,7 @@ export const Home4 = () => {
           </ul>
           {
             id === 1 && 
-            <div className='mt-[50px] grid grid-cols-2'>
+            <div className='mt-[50px] grid grid-cols-1 md:grid-cols-2'>
               <div className='flex items-center'>
                 <div className='px-[12px]'>
                   <h3 className='mb-[15px] text-[30px] font-bold'>Phương pháp học</h3>
@@ -58,7 +58,7 @@ export const Home4 = () => {
           }
           {
             id === 2 && 
-            <div className='mt-[50px] grid grid-cols-2'>
+            <div className='mt-[50px] grid grid-cols-1 md:grid-cols-2'>
               <div className='flex items-center px-[12px]'>
                 <img src='/images/widget-8.png' className='w-full h-auto'/>
               </div>
@@ -74,7 +74,7 @@ export const Home4 = () => {
           }
           {
             id === 3 && 
-            <div className='mt-[50px] grid grid-cols-2'>
+            <div className='mt-[50px] grid grid-cols-1 md:grid-cols-2'>
               <div className='flex items-center'>
                 <div className='px-[12px]'>
                   <h3 className='mb-[15px] text-[30px] font-bold'>Lộ trình</h3>

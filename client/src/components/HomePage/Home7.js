@@ -55,8 +55,8 @@ export const Home7 = () => {
         <h2 className='flex justify-center text-[40px] text-[#cf0f0f] uppercase mb-[10px] text-center font-bold'>SOPHIA – HỆ THỐNG ANH NGỮ CHUẨN QUỐC TẾ</h2>
         <p className='text-center mb-[16px]'>Trung tâm tiếng Anh <strong className='text-[#52525c]'>SOPHIA</strong> không ngừng đào tạo nâng cao nghiệp vụ và ứng dụng Khung Năng Lực Giảng Dạy (Teaching Competency Framework) để kiểm soát chất lượng giảng dạy của từng giáo viên/trợ giảng trong hệ thống.</p>
       </div>
-      <div className='flex pb-[60px] w-[90%] mx-auto'>
-        <div className='w-[60%] grid grid-cols-2 p-[10px]'>
+      <div className='grid grid-cols-1 xl:grid-cols-2 pb-[60px] w-[90%] mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-2 p-[10px]'>
           {
             card.map((item, index) => (
               <div key={index} className='p-[10px]'>
@@ -73,7 +73,7 @@ export const Home7 = () => {
             ))
           }
         </div>
-        <div className='w-[40%] p-[10px]'>
+        <div className='p-[10px] h-[500px] xl:h-full'>
           <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iKU5UReT670" title="Sophia Talkshow: Cặp đôi cao thủ của SOPHIA chia sẻ cách học IELTS 8.5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>

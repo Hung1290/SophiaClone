@@ -209,32 +209,9 @@
     }
   ],
   "home9": [
-    {
-      "fullname": "1",
-      "phonenumber": "1",
-      "course": "Tiếng Anh mầm non",
-      "local": "100 Nguyễn Thị Minh Khai, Đà Nẵng",
-      "note": "1",
-      "contactstatus": "0",
-      "id": 1
-    },
-    {
-      "fullname": "2",
-      "phonenumber": "2",
-      "course": "Tiếng Anh thiếu nhi",
-      "local": "799 Ngô Quyền, Đà Nẵng",
-      "note": "2",
-      "contactstatus": "0",
-      "id": 2
-    },
-    {
-      "fullname": "3",
-      "phonenumber": "3",
-      "course": "Tiếng Anh thiếu niên",
-      "local": "279 Núi Thành, Đà Nẵng",
-      "note": "3",
-      "contactstatus": "0",
-      "id": 3
-    }
+    
+  ],
+  "post1": [
+    
   ]
 }

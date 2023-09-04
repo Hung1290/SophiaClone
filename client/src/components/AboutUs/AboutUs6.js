@@ -10,7 +10,18 @@ const settings = {
   slidesToShow: 2,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 3000
+  autoplaySpeed: 3000,
+  responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  infinite: true,
+			  dots: false
+			}
+		},
+  ]
 };
 
 export const AboutUs6 = () => {
@@ -39,12 +50,12 @@ export const AboutUs6 = () => {
 
   return (
     <div className='bg-[#f8f9fa]'>
-      <div className='w-[90%] mx-auto flex items-center'>
-        <div className='w-[35%] p-[10px]'>
+      <div className='w-[90%] mx-auto md:flex md:items-center'>
+        <div className='md:w-[35%] p-[10px]'>
           <h2 className='mb-[20px] uppercase text-[29px] font-bold text-[#cf0f0f]'>ĐỘI NGŨ TRỢ GIẢNG TRẺ TRUNG, NĂNG ĐỘNG</h2>
           <p className='text-[#52525c] mb-[56px]'>Đội ngũ trợ giảng tại SOPHIA với nhiều năm kinh nghiệm trong ngành giáo dục, luôn quan tâm đến từng bạn học viên.</p>
           </div>
-          <div className='w-[65%] p-[10px]'>
+          <div className='md:w-[65%] p-[10px]'>
             <Slider {...settings}>
               {
                 items.map((item, index) => (

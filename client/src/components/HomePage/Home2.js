@@ -25,17 +25,17 @@ const svgCard = [
 
 export const Home2 = () => {
   return (
-    <div className='pt-[105px] pb-[60px] grid grid-cols-2 w-4/5 mx-auto'>
-      <div className='relative'>
-        <img className='absolute' src='/images/SOPHIA-ENGLISH-CENTER-18-min.png'/>
-        <img src='/images/SOPHIA-ENGLISH-CENTER-6-min.webp'/>
-        <img className='absolute bottom-[-85px] right-[-50px]' src='/images/giangvienbanxu-min.png'/>
+    <div className='pt-[105px] pb-[60px] xl:grid xl:grid-cols-2 w-4/5 mx-auto'>
+      <div className='relative mb-[30px] md:mb-0'>
+        <img alt='' className='absolute' src='/images/SOPHIA-ENGLISH-CENTER-18-min.png'/>
+        <img alt='' src='/images/SOPHIA-ENGLISH-CENTER-6-min.webp' className='h-full w-full'/>
+        <img alt='' className='absolute bottom-[-85px] right-[-50px]' src='/images/giangvienbanxu-min.png'/>
       </div>
       <div className=''>
         <h2 className='text-[40px] font-bold text-[#CF0F0F]'>TẠI SAO BẠN NÊN LỰA CHỌN SOPHIA</h2>
         <p className='text-[#575757]'>Trung tâm tiếng Anh SOPHIA không ngừng đào tạo nâng cao nghiệp vụ và ứng dụng Khung Năng Lực Giảng Dạy (Teaching Competency Framework) để kiểm soát chất lượng giảng dạy của từng giáo viên/trợ giảng trong hệ thống. Cùng với hệ thống LMS giúp cho phụ huynh và học viên có thể kiểm soát được các bài học cũng như lộ trình học của học viên.</p>
         <div className='p-[10px] mt-[50px]'>
-          <ul className='grid grid-cols-2'>
+          <ul className='grid grid-cols-1 md:grid-cols-2'>
           {svgCard.map((item, index) => (
               <li key={index} className='flex flex-row p-[16px] mr-[20px] mb-[20px] shadow-home2 rounded overflow-hidden'>
                 <span>{item.svg}</span>

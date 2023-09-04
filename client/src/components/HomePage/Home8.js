@@ -9,7 +9,26 @@ const settings = {
   slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 3000
+  autoplaySpeed: 3000,
+  responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+			  slidesToShow: 3,
+			  slidesToScroll: 1,
+			  infinite: true,
+			  dots: false
+			}
+		  },
+		  {
+			breakpoint: 620,
+			settings: {
+			  slidesToShow: 2,
+			  slidesToScroll: 1,
+			  initialSlide: 1
+			}
+		  }
+		]
 };
 
 export const Home8 = () => {

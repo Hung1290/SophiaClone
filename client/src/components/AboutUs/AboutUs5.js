@@ -30,7 +30,7 @@ export const AboutUs5 = () => {
       <div className='w-4/5 mx-auto pt-[115px] pb-[70px]'>
         <h2 className='mb-[17px] uppercase text-[40px] font-bold text-[#cf0f0f] text-center'>Đội ngũ giảng viên và trợ giảng</h2>
         <p className='text-[#52525c] mb-[56px] text-center'>Đội ngũ giảng viên bản ngữ với hơn 10 năm kinh nghiệm luôn sẵn sàng giúp đỡ các học viên của mình. Các giáo viên trợ giảng trẻ trung, năng động luôn theo sát các học viên để giúp đỡ hỗ trợ học viên trong học tập và phát triển kĩ năng mềm.</p>
-        <div className='grid grid-cols-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
           {
             items.map((item, index) => (
               <div key={index} className='mb-[16px] px-[15px]'>

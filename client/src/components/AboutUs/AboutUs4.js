@@ -6,7 +6,7 @@ export const AboutUs4 = () => {
   return (
     < div className='bg-[#f8f9fa]'>
       <div className='w-4/5 mx-auto py-[120px]'>
-        <div className='flex'>
+        <div className='lg:flex'>
           <div className='pl-[15px] pr-[65px]'>
             <h2 className='mb-[17px] uppercase text-[40px] font-bold text-[#cf0f0f]'>Giá trị cốt lõi của SOPHIA</h2>
             <p className='text-[#52525c] mb-[36px]'>Tồn tại và phát triển hơn 10 năm qua, để có được ngày hôm nay SOPHIA đã luôn tuân theo các giá trị cốt lõi mà SOPHIA đã đề ra ngay từ những ngày đầu thành lập đó là:</p>

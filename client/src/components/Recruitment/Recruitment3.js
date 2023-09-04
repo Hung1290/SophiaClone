@@ -31,7 +31,7 @@ export const Recruitment3 = () => {
             <h2 className='mb-[20px] uppercase text-[40px] font-bold text-[#cf0f0f] text-center'>Môi trường làm việc tuyệt vời
             </h2>
             <p className='text-[#52525c] mb-[56px] text-center'>Đến với SOPHIA các ứng viên sẽ được làm việc trong môi trường cực kì chuyên nghiệp với các ưu đại không giới hạn tùy theo năng lực của ứng viên</p>
-            <div className='w-full grid grid-cols-2 p-[10px]'>
+            <div className='w-full md:grid md:grid-cols-2 p-[10px]'>
             {
             list.map((item, index) => (
               <div key={index} className='p-[15px]'>
