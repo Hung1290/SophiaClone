@@ -41,6 +41,13 @@ export const Contact3 = () => {
   const handleSubmit = (event) => {
 		event.preventDefault();
 		postData();
+    setState({
+      fullname: '',
+      phonenumber: '',
+      course: '',
+      local: '',
+      note: ''
+    })
 	};
 
   return (

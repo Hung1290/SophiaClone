@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export const ContactList = () => {
 
@@ -22,6 +24,13 @@ export const ContactList = () => {
   useEffect(() => {
 		getData();
 	}, []);
+
+  const handleDelete = async (id) => {
+    const response = await axios.delete(
+      'http://localhost:3000/home9/' + id
+    )
+		await getData();
+  }
 
   const handleUpdateStatus = async (id, oldStatus) => {
 		const newData = {
@@ -60,6 +69,27 @@ export const ContactList = () => {
                     <td className='border border-[#000] p-[10px] text-center'>{item.note}</td>
                     <td className='border border-[#000] p-[10px] text-center'>
                       <button type='checkbox' className={item.contactstatus === "1" ? 'p-[10px] rounded bg-green-500 mb-[10px] border border-[#000]' : 'p-[10px] rounded mb-[10px] border border-[#000]'} onClick={() => handleUpdateStatus(item.id, item.contactstatus)}></button>
+                    </td>
+                    <td className='border border-[#000] p-[10px] text-center'>
+                      <button className='p-[10px] rounded mb-[10px] border border-[#000]' onClick={() => 
+                        {
+                          confirmAlert({
+                            title: 'Confirm to submit',
+                            message: 'Are you sure to do this.',
+                            buttons: [
+                              {
+                              label: 'Yes',
+                              onClick: () => {
+                                handleDelete(item.id)
+                                alert('Click Yes')}
+                              },
+                              {
+                              label: 'No',
+                              onClick: () => alert('Click No')
+                              }
+                            ]
+                            })
+                        }}>Xóa</button>
                     </td>
                   </tr>
                 ))

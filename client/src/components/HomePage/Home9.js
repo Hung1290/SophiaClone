@@ -42,6 +42,13 @@ export const Home9 = () => {
   const handleSubmit = (event) => {
 		event.preventDefault();
 		postData();
+    setState({
+      fullname: '',
+      phonenumber: '',
+      course: '',
+      local: '',
+      note: ''
+    })
 	};
 
   return (
