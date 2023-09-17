@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { AiFillStar } from 'react-icons/ai'
 import Slider from 'react-slick'
-import quotesdot from '../../assets/svg/quotesdot.svg'
-import quotes from '../../assets/svg/quotes.svg'
+import quotesdot from '../../assets/svg/Home6/quotesdot.svg'
+import quotes from '../../assets/svg/Home6/quotes.svg'
 
 const settings = {
   dots: false,

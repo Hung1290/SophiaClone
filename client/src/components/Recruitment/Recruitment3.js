@@ -27,28 +27,28 @@ const list = [
 export const Recruitment3 = () => {
   return (
     <div className='bg-[#f5f5f5] pt-[115px] pb-[120px]'>
-        <div className='w-4/5 mx-auto'>
-            <h2 className='mb-[20px] uppercase text-[40px] font-bold text-[#cf0f0f] text-center'>Môi trường làm việc tuyệt vời
-            </h2>
-            <p className='text-[#52525c] mb-[56px] text-center'>Đến với SOPHIA các ứng viên sẽ được làm việc trong môi trường cực kì chuyên nghiệp với các ưu đại không giới hạn tùy theo năng lực của ứng viên</p>
-            <div className='w-full md:grid md:grid-cols-2 p-[10px]'>
-            {
-            list.map((item, index) => (
-              <div key={index} className='p-[15px]'>
-                <div className='flex bg-white p-[50px] rounded-[10px] h-full'>
-                  <div className=''>
-                    <div className='text-[32px] text-[#cf0f0f] p-[16px] mr-[20px] rounded-[6px]'>{item.icon}</div>
-                  </div>
-                  <div className=''>
-                    <h3 className='text-[20px] mb-[7px] font-semibold'>{item.heading}</h3>
-                    <p className='text-[#52525C]'>{item.content}</p>
-                  </div>
-                </div>
+      <div className='w-4/5 mx-auto'>
+        <h2 className='mb-[20px] uppercase text-[40px] font-bold text-[#cf0f0f] text-center'>Môi trường làm việc tuyệt vời
+        </h2>
+        <p className='text-[#52525c] mb-[56px] text-center'>Đến với SOPHIA các ứng viên sẽ được làm việc trong môi trường cực kì chuyên nghiệp với các ưu đại không giới hạn tùy theo năng lực của ứng viên</p>
+        <div className='w-full md:grid md:grid-cols-2 p-[10px]'>
+        {
+        list.map((item, index) => (
+          <div key={index} className='p-[15px]'>
+            <div className='flex bg-white p-[50px] rounded-[10px] h-full'>
+              <div className=''>
+                <div className='text-[32px] text-[#cf0f0f] p-[16px] mr-[20px] rounded-[6px]'>{item.icon}</div>
               </div>
-            ))
-            }
+              <div className=''>
+                <h3 className='text-[20px] mb-[7px] font-semibold'>{item.heading}</h3>
+                <p className='text-[#52525C]'>{item.content}</p>
+              </div>
+            </div>
+          </div>
+        ))
+        }
         </div>
-        </div>
+      </div>
     </div>
   )
 }

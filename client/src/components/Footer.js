@@ -58,15 +58,13 @@ export const Footer = () => {
             <p className='cursor-pointer flex flex-row items-center px-[20px] py-[13px] relative hover:text-[#CF0F0F]'>
               Khóa học <BiChevronDown/>
             </p>
-            <ul className='absolute top-[46px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white hidden overflow-y-scroll max-h-[260px] group-hover:flex'>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tiếng Anh mẫu giáo</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tiếng Anh Mầm Non</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tiếng Anh Thiếu Nhi</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tiếng Anh Thiếu Niên</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Nền Tảng IELTS</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Active Learning</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Cambridge English</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Du Học</li>
+            <ul className='absolute top-[46px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white hidden group-hover:flex'>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer' onClick={() => navigate('/Course1')}>Tiếng Anh mẫu giáo</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer' onClick={() => navigate('/Course2')}>Tiếng Anh Mầm Non</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer' onClick={() => navigate('/Course3')}>Tiếng Anh Thiếu Nhi</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer' onClick={() => navigate('/Course4')}>Tiếng Anh Thiếu Niên</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer' onClick={() => navigate('/Course5')}>Nền Tảng IELTS</li>
+              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer' onClick={() => navigate('/Course6')}>Du Học</li>
             </ul>
           </li>
           <li className={id === 2 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleAboutUs}>
@@ -84,18 +82,9 @@ export const Footer = () => {
             Liên hệ
             </a>
             </li>
-          <li className='relative group' onClick={handlePosts}>
+          <li className={id === 5 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handlePosts}>
             <a href='#'>
-            <p className='hover:text-[#CF0F0F] cursor-pointer flex flex-row items-center px-[20px] py-[13px]'>
-              Bài viết <BiChevronDown/>
-            </p>
-            <ul className='absolute top-[46px] left-[10px] flex flex-col justify-center items-center w-[250px] bg-white hidden group-hover:flex'>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Ưu đãi</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Chương trình</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Sự kiện</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Vinh danh học viên</li>
-              <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer'>Tin tức</li>
-            </ul> 
+            Bài viết
             </a>
           </li>
             </ul>

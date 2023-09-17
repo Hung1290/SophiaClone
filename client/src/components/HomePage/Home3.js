@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Slider from 'react-slick'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const settings = {
 	dots: false,
@@ -34,6 +35,8 @@ const settings = {
 export const Home3 = () => {
 
 	const [items, setItems] = useState([]);
+
+	const navigate  = useNavigate()
 
 	const getData = async() => {
 		const response = await axios.get(
@@ -75,7 +78,7 @@ export const Home3 = () => {
 							<h2 className='mb-[20px] text-[28px] text-center font-semibold uppercase'>{item.heading}</h2>
 							<p className='mb-[20px] text-[20px] text-[#7A7A7A] text-center'>{item.content}</p>
 							<div className='flex justify-center items-center pb-[20px]'>
-								<a className='bg-[#cf053a] rounded-[5px] border-2 border-solid border-[#cf0f0f] px-[30px] py-[15px] hover:text-[#CF0F0F] hover:bg-white text-white cursor-pointer'>
+								<a className='bg-[#cf053a] rounded-[5px] border-2 border-solid border-[#cf0f0f] px-[30px] py-[15px] hover:text-[#CF0F0F] hover:bg-white text-white cursor-pointer' onClick={() => navigate(item.link)}>
 									<span>Xem thêm</span>
 								</a>
 							</div>

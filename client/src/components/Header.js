@@ -45,7 +45,6 @@ export const Header = () => {
     setIsNavBar(!isNavBar)
   }
 
-  console.log(id);
   return (
     <div className='w-screen bg-white flex justify-center mb-[110px]'>
       <div className='fixed w-screen bg-white flex flex-row lg:justify-around items-center p-[10px] z-10'>
@@ -64,14 +63,12 @@ export const Header = () => {
               Khóa học <BiChevronDown/>
             </p>
              <ul className='absolute hidden group-hover:flex top-[46px] left-[10px]  flex-col justify-center items-center w-[250px] bg-white rounded-lg '>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh mẫu giáo</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh Mầm Non</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh Thiếu Nhi</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh Thiếu Niên</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Nền Tảng IELTS</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Active Learning</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Cambridge English</li>
-              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Du Học</li>
+              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course1')}>Tiếng Anh mẫu giáo</li>
+              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course2')}>Tiếng Anh Mầm Non</li>
+              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course3')}>Tiếng Anh Thiếu Nhi</li>
+              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course4')}>Tiếng Anh Thiếu Niên</li>
+              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course5')}>Nền Tảng IELTS</li>
+              <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course6')}>Du Học</li>
             </ul>
           </li>
           <li className={id === 2 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleAboutUs}>
@@ -119,14 +116,12 @@ export const Header = () => {
                 {
                   isCourse &&
                 <ul className=' rounded-lg ml-[20px]'>
-                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh mẫu giáo</li>
-                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh Mầm Non</li>
-                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh Thiếu Nhi</li>
-                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Tiếng Anh Thiếu Niên</li>
-                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Nền Tảng IELTS</li>
-                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Active Learning</li>
-                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Cambridge English</li>
-                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer'>Du Học</li>
+                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course1')}>Tiếng Anh mẫu giáo</li>
+                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course2')}>Tiếng Anh Mầm Non</li>
+                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course3')}>Tiếng Anh Thiếu Nhi</li>
+                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course4')}>Tiếng Anh Thiếu Niên</li>
+                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course5')}>Nền Tảng IELTS</li>
+                  <li className='p-[10px] hover:text-[#CF0F0F] cursor-pointer' onClick={() => navigate('/Course6')}>Du Học</li>
                 </ul>
                 }
               </li>

@@ -81,7 +81,7 @@ export const Home9 = () => {
           </div>
         </div>
         <div className='relative z-[2]'>
-          <form className='w-[85%] px-[40px] py-[48px] bg-white shadow-home2 rounded-[10px] m-[50px]' onSubmit={handleSubmit}>
+          <form className='w-[85%] px-[40px] py-[48px] bg-white shadow-home2 rounded-[10px] mx-auto md:m-[50px]' onSubmit={handleSubmit}>
             <div className='hidden md:block rounded-[100%] w-[180px] h-[180px] bg-yellow-500 absolute bottom-0 right-0 z-[-1]'></div>
             <div className='hidden md:block border-[20px] rounded-[100%] border-solid border-red-500 w-[100px] h-[100px] absolute top-0 left-0 z-[-1]'></div>
             <div className='flex flex-col px-[12px]'>

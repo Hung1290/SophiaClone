@@ -6,6 +6,7 @@
 
 *{
   font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -40,4 +41,28 @@ code {
 
 .shadow-aboutus2 {
   box-shadow: 0px 15px 55px 0px rgba(102,102,102,.1);
+}
+
+.c1-session2 {
+  box-shadow: 0px 0px 0px 6px #ffc85b;
+}
+
+.c1-session9 {
+  box-shadow: 0px 0px 0px 6px #fff;
+}
+
+.c2-session1 {
+  box-shadow: 50px 20px 100px 0px rgba(116,116,116,.15);
+}
+
+.c2-session2 {
+  box-shadow: 0px 0px 68px 1px rgba(0,0,0,.14);
+}
+
+.c2-session4 {
+  box-shadow: 0px 5px 20px 0px rgba(210,210,245,.5);
+}
+
+.c2-session5 {
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,.1);
 }
