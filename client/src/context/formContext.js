@@ -1,8 +1,8 @@
 import { createContext, useState } from 'react';
 
-const AuthContext = createContext();
+const FormContext = createContext();
 
-const Provider = AuthContext.Provider;
+const Provider = FormContext.Provider;
 
 const initialState = {
 	fullname: '',
@@ -12,7 +12,7 @@ const initialState = {
 	note: '',
 };
 
-const AuthProvider = ({ children }) => {
+const FormProvider = ({ children }) => {
 	const [state, setState] = useState(initialState);
 
 	return (
@@ -22,4 +22,4 @@ const AuthProvider = ({ children }) => {
 	)
 };
 
-export { AuthContext, AuthProvider };
+export { FormContext, FormProvider };

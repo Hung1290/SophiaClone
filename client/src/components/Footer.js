@@ -1,36 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BiChevronDown } from 'react-icons/bi'
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 
 export const Footer = () => {
 
-  const [ id, setId ] = useState(1)
-
   const navigate  = useNavigate()
 
   const handleHome = () => {
-    setId(1)
     navigate('/');
   }
 
   const handleAboutUs = () => {
-    setId(2)
     navigate('/AboutUs');
   }
 
   const handleRecruitment = () => {
-    setId(3)
     navigate('/Recruitment');
   }
 
   const handleContact = () => {
-    setId(4)
     navigate('/Contact');
   }
 
   const handlePosts = () => {
-    setId(5)
     navigate('/Posts');
   }
 
@@ -49,7 +42,7 @@ export const Footer = () => {
               <p className='text-center mb-[16px]'>Cơ sở 3: 279 Núi Thành, Hải Châu, Đà Nẵng.</p>
             </div>
             <ul className='flex flex-row flex-wrap items-center justify-center font-semibold text-white mb-[20px]'>
-            <li className={id === 1 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleHome}>
+            <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' onClick={handleHome}>
             <a href='#'>
             Trang chủ
             </a>
@@ -67,22 +60,22 @@ export const Footer = () => {
               <li className='text-[#000] p-[10px] hover:text-[#fff] hover:bg-slate-600 w-full text-center cursor-pointer' onClick={() => navigate('/Course6')}>Du Học</li>
             </ul>
           </li>
-          <li className={id === 2 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleAboutUs}>
+          <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' onClick={handleAboutUs}>
             <a href='#'>
             Về chúng tôi
             </a>
             </li>
-          <li className={id === 3 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleRecruitment}>
+          <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' onClick={handleRecruitment}>
             <a href='#'>
             Tuyển dụng
             </a>
             </li>
-          <li className={id === 4 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handleContact}>
+          <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' onClick={handleContact}>
             <a href='#'>
             Liên hệ
             </a>
             </li>
-          <li className={id === 5 ? 'text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' : 'hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' } onClick={handlePosts}>
+          <li className='hover:text-[#CF0F0F] cursor-pointer px-[20px] py-[13px]' onClick={handlePosts}>
             <a href='#'>
             Bài viết
             </a>

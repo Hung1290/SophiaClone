@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AuthContext } from '../../context/authContext'
+import { FormContext } from '../../context/formContext'
 import axios from 'axios'
 import { message } from 'antd';
 
@@ -7,7 +7,7 @@ export const Contact3 = () => {
 
   const [messageApi, contextHolder] = message.useMessage()
 
-  const { state, setState } = useContext(AuthContext)
+  const { state, setState } = useContext(FormContext)
 
   const handleOnChangeInput = (event, id) => {
     let valueInput = event.target.value;

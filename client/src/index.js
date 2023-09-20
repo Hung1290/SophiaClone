@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './assets/css/index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import { AuthProvider } from './context/authContext';
+import { FormProvider } from './context/formContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
-  </React.StrictMode>
+  <FormProvider>
+    <App />
+  </FormProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
