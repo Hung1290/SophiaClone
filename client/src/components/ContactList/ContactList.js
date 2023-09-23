@@ -5,6 +5,28 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export const ContactList = () => {
 
+  const [state, setState] = useState({
+    name:'',
+    password:''
+  });
+
+  const [status, setStatus] = useState(0)
+  
+  const handleChange = (e) => {
+		setState({ ...state, [e.target.name]: e.target.value });
+	};
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+		if ( state.name === 'admin' && state.password === '123455') {
+      setStatus(1)
+    }
+	};
+
+  const handleLogout = () => {
+    setStatus(0)
+  }
+
   const [items, setItems] = useState([]);
 
   const getData = async() => {
@@ -45,6 +67,16 @@ export const ContactList = () => {
 
   return (
     <div className='w-screen h-screen bg-white flex items-center justify-center'>
+      {
+      status === 0 && 
+      <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
+        <input required type='text' placeholder='Nhập tên đăng nhập' name='name' onChange={handleChange} className='border border-[#000] p-[10px]'/>
+        <input required type='password' placeholder='Nhập mật khẩu' name='password' onChange={handleChange} className='border border-[#000] p-[10px]'/>
+        <input type='submit' value='Đăng nhập' className='bg-sky-500/75 p-[10px] cursor-pointer'/>
+      </form>
+      }
+      {
+      status === 1 && 
       <div className='bg-[#ccc] w-full h-full'>
         <div className='flex justify-center'>
           <table className='border-2 border-[#000] mt-[16px]'>
@@ -97,7 +129,11 @@ export const ContactList = () => {
             </tbody>
           </table>
         </div>
+        <div className='fixed top-10 right-20'>
+          <button className='border border-[#000] p-[10px]' onClick={handleLogout}>Đăng xuất</button>
+        </div>
       </div>
+      }
     </div>
   )
 }

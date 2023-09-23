@@ -90,7 +90,7 @@ export const Home9 = () => {
                   <input required placeholder="Họ tên học viên" type="text" className='w-full p-[16px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F]' name="fullname" value={state.fullname} onChange={(event) => handleOnChangeInput(event, 'fullname')}/>
                 </div>
                 <div className='px-[12px]'>
-                  <input required placeholder="Số điện thoại" type="text" className='w-full p-[16px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F]' name="phonenumber" value={state.phonenumber} onChange={(event) => handleOnChangeInput(event, 'phonenumber')}/>
+                  <input required placeholder="Số điện thoại" type="text" className='w-full p-[16px] mb-[36px] rounded-[10px] border-2 border-solid border-[#0B163F1F]' name="phonenumber" value={state.phonenumber} onChange={(event) => handleOnChangeInput(event, 'phonenumber')} title='Định dạng:XXX-XXX-XXXX' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
                 </div>
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2'>

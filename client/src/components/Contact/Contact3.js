@@ -66,7 +66,7 @@ export const Contact3 = () => {
                   <input required placeholder="Họ tên học viên" type="text" className='bg-[#f4f5f7] w-full p-[16px] mb-[36px] rounded-[10px] border-2 border-solid border-[#f4f5f7]' name="fullname" value={state.fullname} onChange={(event) => handleOnChangeInput(event, 'fullname')}/>
                 </div>
                 <div className='px-[12px]'>
-                  <input required placeholder="Số điện thoại" type="text" className='bg-[#f4f5f7] w-full p-[16px] mb-[36px] rounded-[10px] border-2 border-solid border-[#f4f5f7]' name="phonenumber" value={state.phonenumber} onChange={(event) => handleOnChangeInput(event, 'phonenumber')}/>
+                  <input placeholder="Số điện thoại" type="tel" className='bg-[#f4f5f7] w-full p-[16px] mb-[36px] rounded-[10px] border-2 border-solid border-[#f4f5f7]' name="phonenumber" value={state.phonenumber} onChange={(event) => handleOnChangeInput(event, 'phonenumber')} title='Định dạng:XXX-XXX-XXXX' required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
                 </div>
               </div>
               <div className='grid grid-cols-1 md:grid-cols-2'>
